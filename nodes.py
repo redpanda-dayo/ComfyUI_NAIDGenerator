@@ -160,6 +160,7 @@ class GenerateNAID:
                 "uncond_scale": ("FLOAT", { "default": 1.0, "min": 0.0, "max": 1.5, "step": 0.05, "display": "number" }),
                 "cfg_rescale": ("FLOAT", { "default": 0.0, "min": 0.0, "max": 1.0, "step": 0.02, "display": "number" }),
                 "keep_alpha": ("BOOLEAN", { "default": True, "tooltip": "Disable to further process output images locally" }),
+                "autosave_filename_prefix": ("STRING", { "default": "NAI_autosave", "tooltip": "FIle name for autosaving images" }),
             },
             "optional": { "option": ("NAID_OPTION",) },
         }
@@ -168,7 +169,7 @@ class GenerateNAID:
     FUNCTION = "generate"
     CATEGORY = "NovelAI"
 
-    def generate(self, limit_opus_free, width, height, positive, negative, steps, cfg, decrisper, variety, smea, sampler, scheduler, seed, uncond_scale, cfg_rescale, keep_alpha, option=None):
+    def generate(self, limit_opus_free, width, height, positive, negative, steps, cfg, decrisper, variety, smea, sampler, scheduler, seed, uncond_scale, cfg_rescale, keep_alpha, autosave_filename_prefix="NAI_autosave", option=None):
         width, height = calculate_resolution(width*height, (width, height))
 
         # ref. novelai_api.ImagePreset
@@ -276,7 +277,7 @@ class GenerateNAID:
             image_bytes = zipped.read(zipped.infolist()[0]) # only support one n_samples
 
             ## save original png to comfy output dir
-            full_output_folder, filename, counter, subfolder, filename_prefix = folder_paths.get_save_image_path("NAI_autosave", self.output_dir)
+            full_output_folder, filename, counter, subfolder, filename_prefix = folder_paths.get_save_image_path(autosave_filename_prefix, self.output_dir)
             file = f"{filename}_{counter:05}_.png"
             d = Path(full_output_folder)
             d.mkdir(exist_ok=True)
