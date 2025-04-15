@@ -1,14 +1,21 @@
-# ComfyUI_NAIDGenerator
+# ComfyUI_NAIDGenerator (Forked Version)
 
 A [ComfyUI](https://github.com/comfyanonymous/ComfyUI) extension for generating image via NovelAI API.
 
-## Fixed Features
+## Changes in This Fork
 
-- `V4PromptConfig` and `V4CharacterCaption` are available.
+This fork introduces the following improvements and fixes:
+
+- Added support for `V4PromptConfig` and `V4CharacterCaption`.
+- Added the `autosave_filename_prefix` property in the `GenerateNAID` node.
+
+For more details, see the sections below.
+
+> Example: How to generate with specified character captions
 
 ![](.github/docs/character_gen.png)
 
-- Add property `autosave_filename_prefix` to GenerateNAID node.
+> autosave_filename_prefix
 
 ![](.github/docs/node.png)
 
