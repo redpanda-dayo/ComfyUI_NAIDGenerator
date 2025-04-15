@@ -4,6 +4,10 @@ A [ComfyUI](https://github.com/comfyanonymous/ComfyUI) extension for generating 
 
 ## Fixed Features
 
+- `V4PromptConfig` and `V4CharacterCaption` are available.
+
+![](.github/docs/character_gen.png)
+
 - Add property `autosave_filename_prefix` to GenerateNAID node.
 
 ![](.github/docs/node.png)
