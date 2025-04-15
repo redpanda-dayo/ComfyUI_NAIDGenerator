@@ -481,7 +481,7 @@ class V4BasePrompt:
     def convert(self, base_caption):
         return (base_caption,)  # Simply returns the caption as a string
 
-"""class V4PromptConfig:
+class V4PromptConfig:
     @classmethod
     def INPUT_TYPES(s):
         return {
@@ -535,7 +535,7 @@ class V4CharacterCaption:
         
         option["v4_prompt"]["caption"]["char_captions"].append(char_caption_obj)
         return (option,)
-"""
+
 class V4NegativePrompt:
     @classmethod
     def INPUT_TYPES(s):
@@ -569,6 +569,8 @@ NODE_CLASS_MAPPINGS = {
     "DeclutterNAID": DeclutterAugment,
     "V4BasePrompt": V4BasePrompt,
     "V4NegativePrompt": V4NegativePrompt,
+    "V4PromptConfig": V4PromptConfig,
+    "V4CharacterCaption": V4CharacterCaption,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -588,4 +590,6 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "DeclutterNAID": "Declutter ✒️🅝🅐🅘",
     "V4BasePrompt": "V4 Base Prompt ✒️🅝🅐🅘",
     "V4NegativePrompt": "V4 Negative Prompt ✒️🅝🅐🅘",
+    "V4PromptConfig": "V4 Prompt Config ✒️🅝🅐🅘",
+    "V4CharacterCaption": "V4 Character Caption ✒️🅝🅐🅘",
 }
