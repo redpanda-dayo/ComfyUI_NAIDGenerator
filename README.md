@@ -2,6 +2,15 @@
 
 A [ComfyUI](https://github.com/comfyanonymous/ComfyUI) extension for generating image via NovelAI API.
 
+## Fixed Features
+
+- Add property `autosave_filename_prefix` to GenerateNAID node.
+
+![](.github/docs/node.png)
+
+
+----
+
 ## Installation
 
 - `git clone https://github.com/bedovyy/ComfyUI_NAIDGenerator` into the `custom_nodes` directory.
