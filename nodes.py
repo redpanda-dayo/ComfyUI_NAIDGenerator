@@ -248,6 +248,7 @@ class GenerateNAID:
             # Handle V4 options
             if "v4_prompt" in option:
                 params["v4_prompt"].update(option["v4_prompt"])
+                params["v4_prompt"]["caption"]["base_caption"] = positive
 
         timeout = option["timeout"] if option and "timeout" in option else None
         retry = option["retry"] if option and "retry" in option else None
